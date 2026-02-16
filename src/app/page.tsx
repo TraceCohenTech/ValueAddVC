@@ -1,4 +1,5 @@
 import ToolCard from "@/components/ToolCard";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const tools = [
   {
@@ -79,6 +80,32 @@ const tools = [
       { label: "Speed", value: "Seconds" },
     ],
   },
+  {
+    title: "VC Prompt System",
+    description:
+      "20 modular diligence prompts for Deep Tech & Vertical AI. Institutional-grade analysis covering market sizing, unit economics, defensibility, and IC memos.",
+    href: "/prompts",
+    icon: "📝",
+    gradient: "bg-gradient-to-br from-amber-500 to-yellow-500",
+    features: ["20 Modules", "Deep Tech", "IC Memos", "Risk Analysis"],
+    stats: [
+      { label: "Prompts", value: "20" },
+      { label: "Grade", value: "Institutional" },
+    ],
+  },
+  {
+    title: "Is SaaS Dead?",
+    description:
+      "AI Defensibility Rankings for 48 SaaS companies. See which businesses will survive the AI agent era and which are vulnerable to disruption.",
+    href: "/saas-dead",
+    icon: "💀",
+    gradient: "bg-gradient-to-br from-red-500 to-orange-500",
+    features: ["48 Companies", "AI Disruption", "Defensibility", "Rankings"],
+    stats: [
+      { label: "Companies", value: "48" },
+      { label: "Focus", value: "AI Risk" },
+    ],
+  },
 ];
 
 const comingSoon = {
@@ -97,7 +124,7 @@ const comingSoon = {
 
 export default function Home() {
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-16 animate-fade-in">
       {/* Hero Section */}
       <div className="relative overflow-hidden min-h-[90vh] flex items-center">
         {/* Animated background elements */}
@@ -159,10 +186,12 @@ export default function Home() {
             </div>
 
             {/* Main heading with staggered animation */}
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              <span className="gradient-text inline-block hover:scale-105 transition-transform duration-300">VC Tools</span>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+              <span className="text-white inline-block hover:scale-105 transition-transform duration-300">Welcome to</span>
               <br />
-              <span className="text-white inline-block hover:scale-105 transition-transform duration-300">Hub</span>
+              <span className="gradient-text inline-block hover:scale-105 transition-transform duration-300">Value Add VC</span>
+              <br />
+              <span className="text-white text-3xl sm:text-4xl lg:text-5xl inline-block hover:scale-105 transition-transform duration-300">The VC Tools Hub</span>
             </h1>
 
             {/* Animated underline */}
@@ -214,19 +243,10 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "7", label: "Tools" },
-              { value: "$1.6T+", label: "Tracked Valuations" },
-              { value: "108+", label: "Unicorns" },
-              { value: "Free", label: "Forever" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center group cursor-default">
-                <div className="text-3xl sm:text-4xl font-bold gradient-text group-hover:scale-110 transition-transform duration-300">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-gray-500 mt-1">{stat.label}</div>
-              </div>
-            ))}
+            <AnimatedCounter value="9" label="Tools" />
+            <AnimatedCounter value="$1.6T+" label="Tracked Valuations" />
+            <AnimatedCounter value="108+" label="Unicorns" />
+            <AnimatedCounter value="900+" label="Funds" />
           </div>
         </div>
       </div>

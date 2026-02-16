@@ -1,9 +1,14 @@
 import ToolPage from "@/components/ToolPage";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Liquidity Waterfall | VC Tools Hub",
+export const metadata: Metadata = {
+  title: "Liquidity Waterfall | Value Add VC",
   description:
-    "Build your custom fund distribution calculator for LP and GP proceeds. Track progress to 1.0x DPI and model partner distributions.",
+    "Build custom fund distribution calculators for LP and GP proceeds. Model carried interest, track progress to 1.0x DPI, and calculate partner distributions.",
+  openGraph: {
+    title: "Liquidity Waterfall | Value Add VC",
+    description: "Model LP/GP distributions, carried interest, and fund waterfalls.",
+  },
 };
 
 export default function WaterfallPage() {

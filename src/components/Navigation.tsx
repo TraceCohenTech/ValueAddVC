@@ -5,18 +5,32 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const tools = [
-  { name: "Home", href: "/", icon: "⚡" },
-  { name: "Benchmarking", href: "/benchmarking", icon: "📊" },
-  { name: "Fund Tracker", href: "/funds", icon: "💰" },
-  { name: "Unicorns", href: "/unicorns", icon: "🦄" },
-  { name: "SPV Calculator", href: "/spv", icon: "🧮" },
-  { name: "Waterfall", href: "/waterfall", icon: "💧" },
-  { name: "Founder DD", href: "/founder-dd", icon: "🔍" },
+  { name: "Home", href: "/", icon: "⚡", preloadUrl: null },
+  { name: "Benchmarking", href: "/benchmarking", icon: "📊", preloadUrl: "https://v0-vc-fund-benchmarking.vercel.app/" },
+  { name: "Fund Tracker", href: "/funds", icon: "💰", preloadUrl: "https://v0-200m-vcfund-list.vercel.app/" },
+  { name: "Unicorns", href: "/unicorns", icon: "🦄", preloadUrl: "https://v0-unicorns-ny-sf.vercel.app/" },
+  { name: "SPV Calculator", href: "/spv", icon: "🧮", preloadUrl: "https://v0-will-spv-make-money.vercel.app/" },
+  { name: "Waterfall", href: "/waterfall", icon: "💧", preloadUrl: "https://v0-liquidity-waterfall-vc.vercel.app/" },
+  { name: "Founder DD", href: "/founder-dd", icon: "🔍", preloadUrl: "https://vc-founder-dd.vercel.app/" },
+  { name: "Prompts", href: "/prompts", icon: "📝", preloadUrl: "https://vc-prompt-system.vercel.app/" },
+  { name: "SaaS Dead?", href: "/saas-dead", icon: "💀", preloadUrl: "https://is-saas-dead.vercel.app/" },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [preloadedUrls, setPreloadedUrls] = useState<Set<string>>(new Set());
+
+  const handleMouseEnter = (preloadUrl: string | null) => {
+    if (preloadUrl && !preloadedUrls.has(preloadUrl)) {
+      // Create a hidden iframe to preload the content
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = preloadUrl;
+      document.head.appendChild(link);
+      setPreloadedUrls((prev) => new Set(prev).add(preloadUrl));
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#30363d]">
@@ -28,7 +42,7 @@ export default function Navigation() {
               VC
             </div>
             <span className="text-lg font-semibold text-white hidden sm:block">
-              VC Tools Hub
+              Value Add VC
             </span>
           </Link>
 
@@ -38,9 +52,10 @@ export default function Navigation() {
               <Link
                 key={tool.href}
                 href={tool.href}
+                onMouseEnter={() => handleMouseEnter(tool.preloadUrl)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
                   pathname === tool.href
-                    ? "bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/30"
+                    ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 text-[#00d4ff] border border-[#00d4ff]/40 shadow-lg shadow-[#00d4ff]/10"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -91,7 +106,7 @@ export default function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-3 ${
                     pathname === tool.href
-                      ? "bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/30"
+                      ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 text-[#00d4ff] border border-[#00d4ff]/40"
                       : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
                 >

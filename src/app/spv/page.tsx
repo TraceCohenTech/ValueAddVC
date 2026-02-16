@@ -1,9 +1,14 @@
 import ToolPage from "@/components/ToolPage";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "SPV Calculator | VC Tools Hub",
+export const metadata: Metadata = {
+  title: "SPV Calculator | Value Add VC",
   description:
-    "Reality check for late-stage SPV investments. Understand how stacked management fees and carry impact your actual returns.",
+    "Reality check for late-stage SPV investments. Calculate how stacked management fees and carry across multiple layers impact your actual returns.",
+  openGraph: {
+    title: "SPV Calculator | Value Add VC",
+    description: "Calculate real returns from multi-layer SPV investments with fee stacking analysis.",
+  },
 };
 
 export default function SPVPage() {
