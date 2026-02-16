@@ -1,9 +1,11 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
+export const preferredRegion = "iad1"; // Virginia - closest to most US users
+export const revalidate = 86400; // Cache for 24 hours
 
 export async function GET() {
-  return new ImageResponse(
+  const imageResponse = new ImageResponse(
     (
       <div
         style={{
@@ -73,7 +75,7 @@ export async function GET() {
             maxWidth: 800,
           }}
         >
-          Fund Benchmarking • Unicorn Tracker • SPV Calculator • Liquidity Waterfall • Founder DD
+          Fund Benchmarking • Unicorn Tracker • SPV Calculator • Founder DD • VC Prompts
         </div>
         <div
           style={{
@@ -83,7 +85,7 @@ export async function GET() {
           }}
         >
           {[
-            { value: "7", label: "Tools" },
+            { value: "9", label: "Tools" },
             { value: "$1.6T+", label: "Tracked" },
             { value: "900+", label: "Funds" },
           ].map((stat, i) => (
@@ -113,6 +115,11 @@ export async function GET() {
     {
       width: 1200,
       height: 630,
+      headers: {
+        "Cache-Control": "public, s-maxage=86400, stale-while-revalidate=604800",
+      },
     }
   );
+
+  return imageResponse;
 }
