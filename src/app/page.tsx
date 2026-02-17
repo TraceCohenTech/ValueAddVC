@@ -106,6 +106,19 @@ const tools = [
       { label: "Focus", value: "AI Risk" },
     ],
   },
+  {
+    title: "CalmPR",
+    description:
+      "Composure Copilot for handling negative online content. Get guidance on whether to respond and craft thoughtful replies when needed.",
+    href: "/calmpr",
+    icon: "🧘",
+    gradient: "bg-gradient-to-br from-teal-500 to-cyan-500",
+    features: ["Response Guidance", "Crisis Management", "PR Strategy", "Free"],
+    stats: [
+      { label: "Advice", value: "AI" },
+      { label: "Privacy", value: "100%" },
+    ],
+  },
 ];
 
 const comingSoon = {
@@ -243,7 +256,7 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter value="9" label="Tools" />
+            <AnimatedCounter value="10" label="Tools" />
             <AnimatedCounter value="$1.6T+" label="Tracked Valuations" />
             <AnimatedCounter value="108+" label="Unicorns" />
             <AnimatedCounter value="900+" label="Funds" />
