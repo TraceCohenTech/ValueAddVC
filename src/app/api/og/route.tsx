@@ -85,7 +85,7 @@ export async function GET() {
           }}
         >
           {[
-            { value: "10", label: "Tools" },
+            { value: "11", label: "Tools" },
             { value: "$1.6T+", label: "Tracked" },
             { value: "900+", label: "Funds" },
           ].map((stat, i) => (

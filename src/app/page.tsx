@@ -119,6 +119,19 @@ const tools = [
       { label: "Privacy", value: "100%" },
     ],
   },
+  {
+    title: "Tech IPO Dashboard",
+    description:
+      "45 years of tech IPOs (1980-2025). Bubble risk detector, year comparisons, VC backing trends, and landmark IPO timeline from Apple to AI.",
+    href: "/tech-ipo",
+    icon: "📈",
+    gradient: "bg-gradient-to-br from-green-500 to-emerald-600",
+    features: ["Bubble Detector", "45 Years", "VC Trends", "IPO Timeline"],
+    stats: [
+      { label: "Years", value: "45" },
+      { label: "Data", value: "1980-2025" },
+    ],
+  },
 ];
 
 const comingSoon = {
@@ -256,7 +269,7 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter value="10" label="Tools" />
+            <AnimatedCounter value="11" label="Tools" />
             <AnimatedCounter value="$1.6T+" label="Tracked Valuations" />
             <AnimatedCounter value="108+" label="Unicorns" />
             <AnimatedCounter value="900+" label="Funds" />

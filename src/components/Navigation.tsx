@@ -15,6 +15,7 @@ const tools = [
   { name: "Prompts", href: "/prompts", icon: "📝", preloadUrl: "https://vc-prompt-system.vercel.app/" },
   { name: "SaaS Dead?", href: "/saas-dead", icon: "💀", preloadUrl: "https://is-saas-dead.vercel.app/" },
   { name: "CalmPR", href: "/calmpr", icon: "🧘", preloadUrl: "https://calmpr.vercel.app/" },
+  { name: "Tech IPO", href: "/tech-ipo", icon: "📈", preloadUrl: "https://tech-ipo-dashboard.vercel.app/" },
 ];
 
 export default function Navigation() {
