@@ -380,32 +380,56 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#7c3aed] to-[#10b981] flex items-center justify-center text-white font-bold shadow-lg">
-                VC
-              </div>
-              <span className="text-lg font-semibold text-white">
-                VC Tools Hub
-              </span>
+          <div className="flex flex-col items-center gap-8">
+            {/* Bio Section */}
+            <div className="text-center max-w-2xl">
+              <p className="text-gray-400">
+                <a
+                  href="https://twitter.com/trace_cohen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white font-semibold hover:text-[#00d4ff] transition-colors"
+                >
+                  Trace Cohen
+                </a>{" "}
+                is a serial founder, investor and data geek. Please feel free to reach out{" "}
+                <a
+                  href="mailto:t@nyvp.com"
+                  className="text-[#00d4ff] hover:underline"
+                >
+                  t@nyvp.com
+                </a>
+              </p>
             </div>
 
-            <div className="flex items-center gap-6 text-sm text-gray-400">
-              <a
-                href="https://twitter.com/trace_cohen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-              >
-                Twitter
-              </a>
-              <a
-                href="mailto:t@nyvp.com"
-                className="hover:text-white transition-colors"
-              >
-                Contact
-              </a>
-              <span>Built with honesty and zero BS</span>
+            {/* Logo and Links */}
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-6 border-t border-[#30363d]">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#7c3aed] to-[#10b981] flex items-center justify-center text-white font-bold shadow-lg">
+                  VC
+                </div>
+                <span className="text-lg font-semibold text-white">
+                  Value Add VC
+                </span>
+              </div>
+
+              <div className="flex items-center gap-6 text-sm text-gray-400">
+                <a
+                  href="https://twitter.com/trace_cohen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Twitter
+                </a>
+                <a
+                  href="mailto:t@nyvp.com"
+                  className="hover:text-white transition-colors"
+                >
+                  Contact
+                </a>
+                <span>Built with honesty and zero BS</span>
+              </div>
             </div>
           </div>
         </div>
