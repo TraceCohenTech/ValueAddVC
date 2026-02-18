@@ -5,34 +5,24 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const tools = [
-  { name: "Home", href: "/", icon: "⚡", preloadUrl: null },
-  { name: "Benchmarking", href: "/benchmarking", icon: "📊", preloadUrl: "https://v0-vc-fund-benchmarking.vercel.app/" },
-  { name: "Fund Tracker", href: "/funds", icon: "💰", preloadUrl: "https://v0-200m-vcfund-list.vercel.app/" },
-  { name: "Unicorns", href: "/unicorns", icon: "🦄", preloadUrl: "https://v0-unicorns-ny-sf.vercel.app/" },
-  { name: "SPV Calculator", href: "/spv", icon: "🧮", preloadUrl: "https://v0-will-spv-make-money.vercel.app/" },
-  { name: "Waterfall", href: "/waterfall", icon: "💧", preloadUrl: "https://v0-liquidity-waterfall-vc.vercel.app/" },
-  { name: "Founder DD", href: "/founder-dd", icon: "🔍", preloadUrl: "https://vc-founder-dd.vercel.app/" },
-  { name: "Prompts", href: "/prompts", icon: "📝", preloadUrl: "https://vc-prompt-system.vercel.app/" },
-  { name: "SaaS Dead?", href: "/saas-dead", icon: "💀", preloadUrl: "https://is-saas-dead.vercel.app/" },
-  { name: "CalmPR", href: "/calmpr", icon: "🧘", preloadUrl: "https://calmpr.vercel.app/" },
-  { name: "Tech IPO", href: "/tech-ipo", icon: "📈", preloadUrl: "https://tech-ipo-dashboard.vercel.app/" },
+  { name: "Benchmarking", href: "/benchmarking", icon: "📊", description: "Fund metrics vs benchmarks" },
+  { name: "Fund Tracker", href: "/funds", icon: "💰", description: "VC funds under $200M" },
+  { name: "Unicorns", href: "/unicorns", icon: "🦄", description: "NY & SF unicorns" },
+  { name: "SPV Calculator", href: "/spv", icon: "🧮", description: "Multi-layer SPV returns" },
+  { name: "Waterfall", href: "/waterfall", icon: "💧", description: "LP/GP distributions" },
+  { name: "Founder DD", href: "/founder-dd", icon: "🔍", description: "AI founder research" },
+  { name: "VC Prompts", href: "/prompts", icon: "📝", description: "Diligence prompts" },
+  { name: "Is SaaS Dead?", href: "/saas-dead", icon: "💀", description: "AI defensibility rankings" },
+  { name: "CalmPR", href: "/calmpr", icon: "🧘", description: "Composure copilot" },
+  { name: "Tech IPO", href: "/tech-ipo", icon: "📈", description: "45 years of IPO data" },
 ];
 
 export default function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [preloadedUrls, setPreloadedUrls] = useState<Set<string>>(new Set());
+  const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
 
-  const handleMouseEnter = (preloadUrl: string | null) => {
-    if (preloadUrl && !preloadedUrls.has(preloadUrl)) {
-      // Create a hidden iframe to preload the content
-      const link = document.createElement("link");
-      link.rel = "prefetch";
-      link.href = preloadUrl;
-      document.head.appendChild(link);
-      setPreloadedUrls((prev) => new Set(prev).add(preloadUrl));
-    }
-  };
+  const currentTool = tools.find((tool) => tool.href === pathname);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-[#30363d]">
@@ -49,22 +39,75 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
-            {tools.map((tool) => (
-              <Link
-                key={tool.href}
-                href={tool.href}
-                onMouseEnter={() => handleMouseEnter(tool.preloadUrl)}
+          <div className="hidden md:flex items-center gap-2">
+            {/* Home Link */}
+            <Link
+              href="/"
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                pathname === "/"
+                  ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 text-[#00d4ff] border border-[#00d4ff]/40 shadow-lg shadow-[#00d4ff]/10"
+                  : "text-gray-400 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <span>⚡</span>
+              <span>Home</span>
+            </Link>
+
+            {/* Tools Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setToolsDropdownOpen(true)}
+              onMouseLeave={() => setToolsDropdownOpen(false)}
+            >
+              <button
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
-                  pathname === tool.href
+                  currentTool
                     ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 text-[#00d4ff] border border-[#00d4ff]/40 shadow-lg shadow-[#00d4ff]/10"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 }`}
               >
-                <span className="text-base">{tool.icon}</span>
-                <span>{tool.name}</span>
-              </Link>
-            ))}
+                <span>{currentTool?.icon || "🛠️"}</span>
+                <span>{currentTool?.name || "Tools"}</span>
+                <svg
+                  className={`w-4 h-4 transition-transform ${toolsDropdownOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {toolsDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-[#0d1117] border border-[#30363d] rounded-xl shadow-2xl shadow-black/50 overflow-hidden">
+                  <div className="p-2 grid grid-cols-2 gap-1">
+                    {tools.map((tool) => (
+                      <Link
+                        key={tool.href}
+                        href={tool.href}
+                        className={`flex items-start gap-3 p-3 rounded-lg transition-all duration-200 ${
+                          pathname === tool.href
+                            ? "bg-[#00d4ff]/10 text-[#00d4ff]"
+                            : "text-gray-300 hover:bg-white/5 hover:text-white"
+                        }`}
+                      >
+                        <span className="text-xl">{tool.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-medium text-sm truncate">{tool.name}</div>
+                          <div className="text-xs text-gray-500 truncate">{tool.description}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="border-t border-[#30363d] p-3">
+                    <div className="text-xs text-gray-500 text-center">
+                      {tools.length} tools available
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -100,7 +143,19 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-[#30363d]">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-3 ${
+                  pathname === "/"
+                    ? "bg-gradient-to-r from-[#00d4ff]/20 to-[#7c3aed]/20 text-[#00d4ff] border border-[#00d4ff]/40"
+                    : "text-gray-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                <span className="text-lg">⚡</span>
+                <span>Home</span>
+              </Link>
               {tools.map((tool) => (
                 <Link
                   key={tool.href}
@@ -113,7 +168,10 @@ export default function Navigation() {
                   }`}
                 >
                   <span className="text-lg">{tool.icon}</span>
-                  <span>{tool.name}</span>
+                  <div>
+                    <div>{tool.name}</div>
+                    <div className="text-xs text-gray-500">{tool.description}</div>
+                  </div>
                 </Link>
               ))}
             </div>
