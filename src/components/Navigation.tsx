@@ -15,6 +15,7 @@ const tools = [
   { name: "Is SaaS Dead?", href: "/saas-dead", icon: "💀", description: "AI defensibility rankings" },
   { name: "CalmPR", href: "/calmpr", icon: "🧘", description: "Composure copilot" },
   { name: "Tech IPO", href: "/tech-ipo", icon: "📈", description: "45 years of IPO data" },
+  { name: "AI Valuations", href: "/ai-valuations", icon: "🤖", description: "47 AI unicorns $300M+" },
 ];
 
 export default function Navigation() {

@@ -132,6 +132,19 @@ const tools = [
       { label: "Data", value: "1980-2025" },
     ],
   },
+  {
+    title: "AI Valuations",
+    description:
+      "Real-time intelligence on 47 AI companies valued at $300M+. Track the AI unicorn landscape, market segments, and $172B+ in total valuations.",
+    href: "/ai-valuations",
+    icon: "🤖",
+    gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+    features: ["47 Companies", "$300M+", "Market Segments", "2020-2025"],
+    stats: [
+      { label: "Companies", value: "47" },
+      { label: "Total", value: "$172B" },
+    ],
+  },
 ];
 
 const comingSoon = {
@@ -269,7 +282,7 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter value="11" label="Tools" />
+            <AnimatedCounter value="12" label="Tools" />
             <AnimatedCounter value="$1.6T+" label="Tracked Valuations" />
             <AnimatedCounter value="108+" label="Unicorns" />
             <AnimatedCounter value="900+" label="Funds" />
