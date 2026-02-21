@@ -29,7 +29,7 @@ const tools = [
     ],
   },
   {
-    title: "Unicorn Tracker",
+    title: "Unicorns (NY & SF)",
     description:
       "Track billion-dollar startup unicorns in New York and San Francisco. Explore valuations, industries, funding data, and top investors.",
     href: "/unicorns",
@@ -39,6 +39,19 @@ const tools = [
     stats: [
       { label: "Unicorns", value: "108" },
       { label: "Total Value", value: "$1.6T" },
+    ],
+  },
+  {
+    title: "Global Unicorns",
+    description:
+      "Track and analyze 1,336 billion-dollar startups across 48 countries. Comprehensive valuations, sector breakdowns, and daily updates.",
+    href: "/unicorns-global",
+    icon: "🌍",
+    gradient: "bg-gradient-to-br from-indigo-500 to-violet-600",
+    features: ["1,336 Unicorns", "48 Countries", "Daily Updates", "Sectors"],
+    stats: [
+      { label: "Unicorns", value: "1,336" },
+      { label: "Total Value", value: "$4.5T" },
     ],
   },
   {
@@ -143,6 +156,19 @@ const tools = [
     stats: [
       { label: "Companies", value: "47" },
       { label: "Total", value: "$172B" },
+    ],
+  },
+  {
+    title: "2025 Funding Tracker",
+    description:
+      "Daily deal flow dashboard tracking startup funding throughout 2025. Monitor round sizes, top investors, and the biggest raises of the year.",
+    href: "/funding-2025",
+    icon: "💸",
+    gradient: "bg-gradient-to-br from-emerald-500 to-green-600",
+    features: ["Daily Updates", "Deal Flow", "Top Investors", "Round Sizes"],
+    stats: [
+      { label: "Rounds", value: "5,000+" },
+      { label: "Year", value: "2025" },
     ],
   },
 ];
@@ -282,9 +308,9 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter value="12" label="Tools" />
-            <AnimatedCounter value="$1.6T+" label="Tracked Valuations" />
-            <AnimatedCounter value="108+" label="Unicorns" />
+            <AnimatedCounter value="14" label="Tools" />
+            <AnimatedCounter value="$4.5T+" label="Tracked Valuations" />
+            <AnimatedCounter value="1,336" label="Unicorns" />
             <AnimatedCounter value="900+" label="Funds" />
           </div>
         </div>

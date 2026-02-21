@@ -7,7 +7,8 @@ import { useState } from "react";
 const tools = [
   { name: "Benchmarking", href: "/benchmarking", icon: "📊", description: "Fund metrics vs benchmarks" },
   { name: "Fund Tracker", href: "/funds", icon: "💰", description: "VC funds under $200M" },
-  { name: "Unicorns", href: "/unicorns", icon: "🦄", description: "NY & SF unicorns" },
+  { name: "Unicorns (NY/SF)", href: "/unicorns", icon: "🦄", description: "NY & SF unicorns" },
+  { name: "Global Unicorns", href: "/unicorns-global", icon: "🌍", description: "1,336 unicorns worldwide" },
   { name: "SPV Calculator", href: "/spv", icon: "🧮", description: "Multi-layer SPV returns" },
   { name: "Waterfall", href: "/waterfall", icon: "💧", description: "LP/GP distributions" },
   { name: "Founder DD", href: "/founder-dd", icon: "🔍", description: "AI founder research" },
@@ -16,6 +17,7 @@ const tools = [
   { name: "CalmPR", href: "/calmpr", icon: "🧘", description: "Composure copilot" },
   { name: "Tech IPO", href: "/tech-ipo", icon: "📈", description: "45 years of IPO data" },
   { name: "AI Valuations", href: "/ai-valuations", icon: "🤖", description: "47 AI unicorns $300M+" },
+  { name: "2025 Funding", href: "/funding-2025", icon: "💸", description: "Daily deal flow 2025" },
 ];
 
 export default function Navigation() {

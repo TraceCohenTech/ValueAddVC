@@ -85,9 +85,9 @@ export async function GET() {
           }}
         >
           {[
-            { value: "12", label: "Tools" },
-            { value: "$1.6T+", label: "Tracked" },
-            { value: "900+", label: "Funds" },
+            { value: "14", label: "Tools" },
+            { value: "$4.5T+", label: "Tracked" },
+            { value: "1,336", label: "Unicorns" },
           ].map((stat, i) => (
             <div
               key={i}
