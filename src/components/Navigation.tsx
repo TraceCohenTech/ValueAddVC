@@ -19,6 +19,7 @@ const tools = [
   { name: "AI Valuations", href: "/ai-valuations", icon: "🤖", description: "47 AI unicorns $300M+" },
   { name: "2025 Funding", href: "/funding-2025", icon: "💸", description: "Daily deal flow 2025" },
   { name: "VC Universe", href: "/vc-universe", icon: "🔭", description: "1,000+ VC firms database" },
+  { name: "LP Matchmaking", href: "/lp-match", icon: "🎯", description: "Match LPs with funds" },
 ];
 
 export default function Navigation() {

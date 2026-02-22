@@ -184,6 +184,19 @@ const tools = [
       { label: "Regions", value: "Global" },
     ],
   },
+  {
+    title: "LP Matchmaking",
+    description:
+      "Find and match with VC funds that fit your investment mandate. Swipe through funds, build your deck, and connect based on stage, sector, and size.",
+    href: "/lp-match",
+    icon: "🎯",
+    gradient: "bg-gradient-to-br from-rose-500 to-pink-600",
+    features: ["LP Matching", "Fund Swipe", "Stage Filter", "Sector Match"],
+    stats: [
+      { label: "LP Types", value: "6" },
+      { label: "Match", value: "Swipe" },
+    ],
+  },
 ];
 
 const comingSoon = {
@@ -321,7 +334,7 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            <AnimatedCounter value="15" label="Tools" />
+            <AnimatedCounter value="16" label="Tools" />
             <AnimatedCounter value="$4.5T+" label="Tracked" />
             <AnimatedCounter value="1,336" label="Unicorns" />
             <AnimatedCounter value="1,000+" label="VC Firms" />

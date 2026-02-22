@@ -85,7 +85,7 @@ export async function GET() {
           }}
         >
           {[
-            { value: "15", label: "Tools" },
+            { value: "16", label: "Tools" },
             { value: "$4.5T+", label: "Tracked" },
             { value: "1,336", label: "Unicorns" },
             { value: "1,000+", label: "VCs" },
