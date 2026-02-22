@@ -171,6 +171,19 @@ const tools = [
       { label: "Year", value: "2025" },
     ],
   },
+  {
+    title: "VC Universe",
+    description:
+      "Searchable database of 1,000+ verified VC firms. Filter by stage, sector, region, check size, or use the VC Matchmaker quiz to find your perfect investor.",
+    href: "/vc-universe",
+    icon: "🔭",
+    gradient: "bg-gradient-to-br from-slate-500 to-zinc-600",
+    features: ["1,000+ VCs", "Matchmaker Quiz", "Stage Filter", "Sector Search"],
+    stats: [
+      { label: "VC Firms", value: "1,000+" },
+      { label: "Regions", value: "Global" },
+    ],
+  },
 ];
 
 const comingSoon = {
@@ -308,7 +321,7 @@ export default function Home() {
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter value="14" label="Tools" />
+            <AnimatedCounter value="15" label="Tools" />
             <AnimatedCounter value="$4.5T+" label="Tracked Valuations" />
             <AnimatedCounter value="1,336" label="Unicorns" />
             <AnimatedCounter value="900+" label="Funds" />

@@ -18,6 +18,7 @@ const tools = [
   { name: "Tech IPO", href: "/tech-ipo", icon: "📈", description: "45 years of IPO data" },
   { name: "AI Valuations", href: "/ai-valuations", icon: "🤖", description: "47 AI unicorns $300M+" },
   { name: "2025 Funding", href: "/funding-2025", icon: "💸", description: "Daily deal flow 2025" },
+  { name: "VC Universe", href: "/vc-universe", icon: "🔭", description: "1,000+ VC firms database" },
 ];
 
 export default function Navigation() {
