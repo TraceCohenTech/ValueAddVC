@@ -33,7 +33,7 @@ export async function GET() {
               width: 80,
               height: 80,
               borderRadius: 16,
-              background: "linear-gradient(135deg, #00d4ff, #7c3aed, #10b981)",
+              background: "linear-gradient(135deg, #00d4ff, #3b82f6, #94a3b8)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -59,7 +59,7 @@ export async function GET() {
           style={{
             fontSize: 72,
             fontWeight: "bold",
-            background: "linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #10b981 100%)",
+            background: "linear-gradient(135deg, #00d4ff 0%, #3b82f6 50%, #94a3b8 100%)",
             backgroundClip: "text",
             color: "transparent",
             marginBottom: 20,
@@ -88,6 +88,7 @@ export async function GET() {
             { value: "15", label: "Tools" },
             { value: "$4.5T+", label: "Tracked" },
             { value: "1,336", label: "Unicorns" },
+            { value: "1,000+", label: "VCs" },
           ].map((stat, i) => (
             <div
               key={i}

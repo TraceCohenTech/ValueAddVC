@@ -34,7 +34,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#7c3aed] to-[#10b981] flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-[#00d4ff]/30 transition-shadow">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#3b82f6] to-[#94a3b8] flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-[#00d4ff]/30 transition-shadow">
               VC
             </div>
             <span className="text-lg font-semibold text-white hidden sm:block">

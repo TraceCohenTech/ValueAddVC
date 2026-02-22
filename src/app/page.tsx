@@ -34,7 +34,7 @@ const tools = [
       "Track billion-dollar startup unicorns in New York and San Francisco. Explore valuations, industries, funding data, and top investors.",
     href: "/unicorns",
     icon: "🦄",
-    gradient: "bg-gradient-to-br from-violet-500 to-purple-500",
+    gradient: "bg-gradient-to-br from-blue-500 to-indigo-500",
     features: ["Valuations", "Industries", "Funding", "Investors"],
     stats: [
       { label: "Unicorns", value: "108" },
@@ -47,7 +47,7 @@ const tools = [
       "Track and analyze 1,336 billion-dollar startups across 48 countries. Comprehensive valuations, sector breakdowns, and daily updates.",
     href: "/unicorns-global",
     icon: "🌍",
-    gradient: "bg-gradient-to-br from-indigo-500 to-violet-600",
+    gradient: "bg-gradient-to-br from-indigo-500 to-blue-600",
     features: ["1,336 Unicorns", "48 Countries", "Daily Updates", "Sectors"],
     stats: [
       { label: "Unicorns", value: "1,336" },
@@ -151,7 +151,7 @@ const tools = [
       "Real-time intelligence on 47 AI companies valued at $300M+. Track the AI unicorn landscape, market segments, and $172B+ in total valuations.",
     href: "/ai-valuations",
     icon: "🤖",
-    gradient: "bg-gradient-to-br from-purple-500 to-indigo-600",
+    gradient: "bg-gradient-to-br from-sky-500 to-indigo-600",
     features: ["47 Companies", "$300M+", "Market Segments", "2020-2025"],
     stats: [
       { label: "Companies", value: "47" },
@@ -192,7 +192,7 @@ const comingSoon = {
     "Transform meeting transcripts into actionable investment memos. Capture transcripts, generate structured memos, track follow-ups, and query your knowledge base.",
   href: "https://ai-vc-v2.vercel.app/",
   icon: "🤖",
-  gradient: "bg-gradient-to-br from-indigo-500 to-purple-600",
+  gradient: "bg-gradient-to-br from-blue-500 to-slate-600",
   features: ["AI Memos", "Deal Tracking", "Action Items", "Portfolio Q&A"],
   stats: [
     { label: "Status", value: "Beta" },
@@ -214,11 +214,11 @@ export default function Home() {
         {/* Animated gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#00d4ff]/20 rounded-full blur-[100px] animate-float" />
         <div
-          className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[#7c3aed]/20 rounded-full blur-[120px] animate-float"
+          className="absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-[#64748b]/20 rounded-full blur-[120px] animate-float"
           style={{ animationDelay: "2s" }}
         />
         <div
-          className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#10b981]/15 rounded-full blur-[80px] animate-float"
+          className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-[#94a3b8]/15 rounded-full blur-[80px] animate-float"
           style={{ animationDelay: "4s" }}
         />
 
@@ -240,7 +240,7 @@ export default function Home() {
 
         {/* Animated lines */}
         <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#00d4ff]/20 to-transparent" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#7c3aed]/20 to-transparent" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#94a3b8]/20 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 w-full">
           <div className="text-center">
@@ -274,7 +274,7 @@ export default function Home() {
 
             {/* Animated underline */}
             <div className="flex justify-center mb-8 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              <div className="h-1 w-24 bg-gradient-to-r from-[#00d4ff] via-[#7c3aed] to-[#10b981] rounded-full" />
+              <div className="h-1 w-24 bg-gradient-to-r from-[#00d4ff] via-[#94a3b8] to-[#e2e8f0] rounded-full" />
             </div>
 
             <p className="max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 mb-10 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
@@ -287,7 +287,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
               <a
                 href="#tools"
-                className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-[#00d4ff] to-[#7c3aed] text-white font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#00d4ff]/30"
+                className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-[#00d4ff] to-[#3b82f6] text-white font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#00d4ff]/30"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Explore Tools
@@ -295,7 +295,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#7c3aed] to-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#3b82f6] to-[#00d4ff] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
               <a
                 href="https://twitter.com/trace_cohen"
@@ -320,11 +320,13 @@ export default function Home() {
       {/* Stats Section */}
       <div className="border-y border-[#30363d] bg-[#0d1117]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             <AnimatedCounter value="15" label="Tools" />
-            <AnimatedCounter value="$4.5T+" label="Tracked Valuations" />
+            <AnimatedCounter value="$4.5T+" label="Tracked" />
             <AnimatedCounter value="1,336" label="Unicorns" />
-            <AnimatedCounter value="900+" label="Funds" />
+            <AnimatedCounter value="1,000+" label="VC Firms" />
+            <AnimatedCounter value="5,000+" label="Rounds" />
+            <AnimatedCounter value="48" label="Countries" />
           </div>
         </div>
       </div>
@@ -356,7 +358,7 @@ export default function Home() {
             <div className="relative h-full bg-[#0d1117] rounded-2xl border border-[#30363d] overflow-hidden card-hover">
               {/* Coming Soon Banner */}
               <div className="absolute top-4 right-4 z-10">
-                <span className="px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white animate-pulse">
+                <span className="px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-blue-500 to-slate-500 text-white animate-pulse">
                   COMING SOON
                 </span>
               </div>
@@ -412,7 +414,7 @@ export default function Home() {
                   {comingSoon.features.map((feature, index) => (
                     <span
                       key={index}
-                      className="px-2 py-1 text-xs rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/30"
+                      className="px-2 py-1 text-xs rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/30"
                     >
                       {feature}
                     </span>
@@ -457,7 +459,7 @@ export default function Home() {
             {/* Logo and Links */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full pt-6 border-t border-[#30363d]">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#7c3aed] to-[#10b981] flex items-center justify-center text-white font-bold shadow-lg">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00d4ff] via-[#3b82f6] to-[#94a3b8] flex items-center justify-center text-white font-bold shadow-lg">
                   VC
                 </div>
                 <span className="text-lg font-semibold text-white">
